@@ -47,8 +47,7 @@ def get_config(env_state: Optional[str]):
         env_state = "dev"
 
     try:
-        print( configs[env_state]())
-        exit()
+
         return configs[env_state]()
     except KeyError:
         raise ValueError(f"Invalid ENV_STATE: {env_state}. Must be one of {list(configs.keys())}.")
